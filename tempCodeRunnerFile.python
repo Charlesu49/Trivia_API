@@ -1,0 +1,69 @@
+from datetime import date
+from os import name
+import csv
+
+
+
+# class Profile:
+#     current_year = int(date.today().year)
+#     def __init__(self, fname: str, lname: int, birth_year: float, birth_place:str):
+#         # run validations on received arguments, the second argument is the error to return
+#         assert birth_year >= 1900, f"Birth year {birth_year} is not greater than or equal to 1900"
+
+
+#         # assign to self object
+#         self.fname = fname
+#         self.lname = lname
+#         self.birth_year = birth_year
+#         self.birth_place = birth_place
+#     def age(self):
+#         return (Profile.current_year - self.birth_year)
+
+# profile1 = Profile(birth_place='ph',fname='charles', birth_year=1994, lname='udo')
+# print(profile1.age())
+# print(Profile.__dict__)
+# print(profile1.__dict__)
+
+        
+class Item:
+    discount = 0.8
+    all = []
+    def __init__(self, name: str, price: int, quantity: int):
+        # validations
+        assert price >= 0, f"Price {price} is not zero or greated than zero"
+
+
+        # assign to self object
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+
+        # actions
+        Item.all.append(self)
+
+    def calculate_total_price(self):
+        return self.price * self.quantity
+
+    def apply_discount(self):
+        self.price = self.price * self.pay_rate
+
+    def apply_discount(self):
+        self.price = self.price * Item.discount
+
+    @classmethod
+    def instantiate_from_csv(cls): #it accepts the class arg
+        with open ('items.csv', 'r') as f:
+            reader = csv.DictReader(f)
+            items = list(reader)
+        for item in items:
+            print(item)
+
+    def __repr__(self):
+        return f'Item("{self.name}", {self.price}, {self.quantity})'
+
+# class methods are methods that can only be accessed from the class itself not from an instance of the class instantiate_from_csv() is one such and can be accessed as Item.instantiate_from_csv()
+
+Item.instantiate_from_csv()
+
+# for instance in Item.all:
+#     print(f'{instance.name} : {instance.price}')
