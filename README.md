@@ -5,9 +5,7 @@
 ### Demo
 
 
-https://user-images.githubusercontent.com/38054491/182041077-0e0a30d7-82fb-450a-b4b1-9945c794b6d7.mp4
-
-
+https://user-images.githubusercontent.com/38054491/182041211-ba51bf79-3f01-421e-bc87-0cc0a2375bfd.mp4
 
 
 Udacity is invested in creating bonding experiences for its employees and students. A bunch of team members got the idea to hold trivia on a regular basis and created a webpage to manage the trivia app and play the game, but their API experience is limited and still needs to be built out.
